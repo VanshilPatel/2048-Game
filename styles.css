@@ -18,6 +18,21 @@ hr{
   flex-wrap: wrap;
 }
 
+h1{
+    font-family: "Clear Sans","Helvetica Neue" , Arial;
+    color: #776E65;
+    font-size: 80px;
+    font-weight: 700;
+}
+
+h2{
+    font-family: "Clear Sans","Helvetica Neue" , Arial;
+    font-size: 30px;
+    font-weight: 700;
+    color: #776E65;
+
+}
+
 
 .tile{
     width: 90px;
