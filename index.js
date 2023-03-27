@@ -5,6 +5,40 @@ var columns = 4;
 
 window.onload = function () {
   setGame();
+  window.onload = function () {
+    setGame();
+
+    // Added touch event listeners
+    let startX, startY;
+    document.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+    document.addEventListener("touchmove", function (e) {
+      e.preventDefault();
+    });
+    document.addEventListener("touchend", function (e) {
+      let endX = e.changedTouches[0].clientX;
+      let endY = e.changedTouches[0].clientY;
+      let diffX = startX - endX;
+      let diffY = startY - endY;
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX > 0) {
+          slideLeft();
+        } else {
+          slideRight();
+        }
+      } else {
+        if (diffY > 0) {
+          slideUp();
+        } else {
+          slideDown();
+        }
+      }
+      document.getElementById("score").innerText = score;
+      setTwo();
+    });
+  };
 };
 
 function setGame() {
